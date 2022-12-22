@@ -1,0 +1,99 @@
+{
+    "name": "Abo Elmaged Music Bot",
+    "description": "Telegram Group Calls streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.",
+    "logo": "https://telegra.ph/file/c0e014ff34f34d1056627.png",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "Abo Elmaged",
+    "Abo Elmaged MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "stack": "container",
+    "env": {
+      "API_ID": {
+        "description": "يمكنك الحصول عليها من https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "يمكنك الحصول عليها من https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "AUTO_LEAVING_ASSISTANT": {
+        "description": "لو عايز المساعد يخرج من البارات بعد وقت ",
+        "value": "True",
+        "required": false
+      },
+      "BOT_TOKEN": {
+        "description": "توكن البوت",
+        "value": "",
+        "required": true
+      },
+      "MONGO_DB_URI": {
+        "description": "رابط مونجو تقدر تجيبه من https://cloud.mongodb.com . تقدر تسيبها فاضيه وهتستخدم رابط السورس.",
+        "value": "",
+        "required": true
+      },
+      "MUSIC_BOT_NAME": {
+        "description": "اسم للبوت بس متستخدمش اي زخرفه او حروف كبيره او مسافات",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "ايدي المطور الاساسي",
+        "value": "",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "كود سيشن بايرو",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "ايبي كي بتاع ايميل هيروكو",
+        "value": "",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "اسم التطبيق (اول اسم عملته)",
+        "value": "",
+        "required": false
+      },
+      "LOG_GROUP_ID": {
+        "description": "ايدي جروب الحفظ اعمل روم وارفع البوت فيه ادمن بكل الصلاحيات (روم مش قناة)",
+        "value": "",
+        "required": true
+      },
+      "UPSTREAM_REPO": {
+        "description": "سيبها زي ما هيا ",
+        "value": "https://github.com/alielsayed76/aboelmagedMusicBot",
+        "required": true
+      },
+      "UPSTREAM_BRANCH": {
+        "description": "سيبها برضو",
+        "value": "master",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "formation": {
+          "worker": {
+              "quantity": 1,
+              "size": "free"
+          }
+      }
+  }
